@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-namespace State {
+﻿namespace State {
   public class ScoreState : Reducer<int> {
     public int value {
       get;
