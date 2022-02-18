@@ -8,15 +8,7 @@ namespace GUI {
     
     public override void InstallBindings() {
       Container.Bind<TextMeshProUGUI>().WithId("count-text").FromInstance(countText).AsSingle();
-      Container.BindInterfacesTo<HUD>().AsSingle().NonLazy();
-    }
-  }
-  
-  public class Foo : MonoInstaller<GUIInstaller> {
-    [SerializeField] private GameObject player;
-
-    public override void InstallBindings() {
-      Container.Bind<Transform>().FromInstance(player.transform).AsSingle();
+      Container.Bind<HUD>().AsSingle().NonLazy();
     }
   }
 }

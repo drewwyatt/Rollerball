@@ -1,6 +1,7 @@
-﻿using System;
+﻿using Cysharp.Threading.Tasks;
+
 namespace State {
   public interface Reducer<T> {
-    public T value { get; }
+    public AsyncReactiveProperty<T> value { get; }
   }
 }

@@ -1,18 +1,19 @@
-﻿namespace State {
+﻿using Cysharp.Threading.Tasks;
+
+namespace State {
   public class ScoreState : Reducer<int> {
-    public int value {
+    public AsyncReactiveProperty<int> value {
       get;
-      private set;
-    }
+    } = new AsyncReactiveProperty<int>(0);
 
     public void HandlePickup() {
-      value++;
+      value.Value++;
     }
 
     public override string ToString() {
-      return value.ToString();
+      return value.Value.ToString();
     }
 
-    public static implicit operator int(ScoreState state) => state.value;
+    public static implicit operator int(ScoreState state) => state.value.Value;
   }
 }

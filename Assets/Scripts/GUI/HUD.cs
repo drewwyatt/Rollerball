@@ -1,18 +1,18 @@
-﻿using State;
+﻿using Cysharp.Threading.Tasks.Linq;
+using State;
 using TMPro;
 using Zenject;
 
 namespace GUI {
-  public class HUD : ITickable {
+  public class HUD {
     private TextMeshProUGUI countText;
-    private ScoreState score;
-    
-    public HUD(ScoreState scoreState, [Inject(Id = "count-text")] TextMeshProUGUI countText) {
-      score = scoreState;
+
+    public HUD(ScoreState score, [Inject(Id = "count-text")] TextMeshProUGUI countText) {
       this.countText = countText;
+      score.value.Subscribe(Update);
     }
 
-    public void Tick() {
+    private void Update(int score) {
       countText.text = $"Count: {score}";
     }
   }
