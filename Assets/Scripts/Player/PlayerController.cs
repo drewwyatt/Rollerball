@@ -6,7 +6,6 @@ using Zenject;
 namespace Player {
   public class PlayerController : MonoBehaviour {
     public float speed = 0;
-    public GameObject winText;
   
     private Rigidbody rb;
     private float movementX;
@@ -17,11 +16,6 @@ namespace Player {
     public void Initialize(ScoreState scoreState, Rigidbody rb) {
       score = scoreState;
       this.rb = rb;
-    }
-
-    public void Start() {
-      winText.gameObject.SetActive(false);
-      UpdateCountText();
     }
 
     public void OnMove(InputValue value) {
@@ -39,14 +33,6 @@ namespace Player {
       if (other.gameObject.CompareTag("Pickup")) {
         other.gameObject.SetActive(false);
         score.HandlePickup();
-        UpdateCountText();
-      }
-    }
-
-    private void UpdateCountText() {
-      // countText.text = $"Count: {score}";
-      if (score >= 12) {
-        winText.SetActive(true);
       }
     }
   }
