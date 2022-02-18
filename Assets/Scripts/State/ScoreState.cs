@@ -10,10 +10,7 @@ namespace State {
       value.Value++;
     }
 
-    public override string ToString() {
-      return value.Value.ToString();
-    }
-
+    public override string ToString() => value.Value.ToString();
     public static implicit operator int(ScoreState state) => state.value.Value;
   }
 }
