@@ -280,7 +280,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  countText: {fileID: 854937863}
   winText: {fileID: 288457677}
 --- !u!1 &58935401
 GameObject:
@@ -1751,6 +1750,7 @@ GameObject:
   - component: {fileID: 1498432898}
   - component: {fileID: 1498432897}
   - component: {fileID: 1498432896}
+  - component: {fileID: 1498432900}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1840,6 +1840,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1498432900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498432895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a036d8e8a5e04a86a01e64bff33ec6c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1577379445
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2008,6 +2020,7 @@ GameObject:
   - component: {fileID: 2057354204}
   - component: {fileID: 2057354203}
   - component: {fileID: 2057354202}
+  - component: {fileID: 2057354205}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -2042,6 +2055,7 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 2057354202}
+  - {fileID: 2057354205}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -2073,6 +2087,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2057354205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057354201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8d9cae2757f4a0d9f43e69ffae16228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countText: {fileID: 854937863}
 --- !u!1001 &2068646289
 PrefabInstance:
   m_ObjectHideFlags: 0

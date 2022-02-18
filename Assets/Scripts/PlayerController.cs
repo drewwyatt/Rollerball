@@ -6,7 +6,7 @@ using Zenject;
 
 public class PlayerController : MonoBehaviour {
   public float speed = 0;
-  public TextMeshProUGUI countText;
+  // public TextMeshProUGUI countText;
   public GameObject winText;
   
   private Rigidbody rb;
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour {
   }
 
   private void UpdateCountText() {
-    countText.text = $"Count: {score}";
+    // countText.text = $"Count: {score}";
     if (score >= 12) {
       winText.SetActive(true);
     }
