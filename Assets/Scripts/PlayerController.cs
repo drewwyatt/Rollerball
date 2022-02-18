@@ -45,8 +45,8 @@ public class PlayerController : MonoBehaviour {
   }
 
   private void UpdateCountText() {
-    countText.text = $"Count: {score.value}";
-    if (score.value >= 12) {
+    countText.text = $"Count: {score}";
+    if (score >= 12) {
       winText.SetActive(true);
     }
   }
