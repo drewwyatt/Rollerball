@@ -138,6 +138,8 @@ GameObject:
   - component: {fileID: 58001190}
   - component: {fileID: 58001195}
   - component: {fileID: 58001196}
+  - component: {fileID: 58001198}
+  - component: {fileID: 58001197}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -281,6 +283,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   winText: {fileID: 288457677}
+--- !u!114 &58001197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58001189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b08fa56b9a2e400ab832f87719a2e583, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &58001198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58001189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08eca9f7688a0a24685b89133b020c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scriptableObjectInstallers: []
+  _monoInstallers:
+  - {fileID: 58001197}
+  _installerPrefabs: []
+  _autoRun: 1
+  _kernel: {fileID: 0}
 --- !u!1 &58935401
 GameObject:
   m_ObjectHideFlags: 0

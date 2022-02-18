@@ -11,4 +11,12 @@ namespace GUI {
       Container.BindInterfacesTo<HUD>().AsSingle().NonLazy();
     }
   }
+  
+  public class Foo : MonoInstaller<GUIInstaller> {
+    [SerializeField] private GameObject player;
+
+    public override void InstallBindings() {
+      Container.Bind<Transform>().FromInstance(player.transform).AsSingle();
+    }
+  }
 }
