@@ -1,6 +1,8 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using State;
+using Zenject;
 
 public class PlayerController : MonoBehaviour {
   public float speed = 0;
@@ -10,10 +12,14 @@ public class PlayerController : MonoBehaviour {
   private Rigidbody rb;
   private float movementX;
   private float movementY;
-  private int count;
+  private ScoreState score;
+
+  [Inject]
+  public void Initialize(ScoreState scoreState) {
+    score = scoreState;
+  }
 
   public void Start() {
-    count = 0;
     rb = GetComponent<Rigidbody>();
     winText.gameObject.SetActive(false);
     UpdateCountText();
@@ -33,14 +39,14 @@ public class PlayerController : MonoBehaviour {
   private void OnTriggerEnter(Collider other) {
     if (other.gameObject.CompareTag("Pickup")) {
       other.gameObject.SetActive(false);
-      count++;
+      score.HandlePickup();
       UpdateCountText();
     }
   }
 
   private void UpdateCountText() {
-    countText.text = $"Count: {count}";
-    if (count >= 12) {
+    countText.text = $"Count: {score.value}";
+    if (score.value >= 12) {
       winText.SetActive(true);
     }
   }
