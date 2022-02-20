@@ -3,8 +3,11 @@ using Zenject;
 
 namespace Player {
   public class PlayerInstaller : MonoInstaller<PlayerInstaller> {
+    [SerializeField] private GameObject player;
+    
     public override void InstallBindings() {
-      Container.Bind<Rigidbody>().FromComponentOnRoot().AsSingle();
+      Container.BindInterfacesAndSelfTo<PlayerModel>().AsSingle();
+      Container.Bind<Rigidbody>().FromInstance(player.GetComponent<Rigidbody>()).AsSingle();
     }
   }
 }

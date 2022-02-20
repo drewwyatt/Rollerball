@@ -1,39 +1,22 @@
-using State;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
 
 namespace Player {
   public class PlayerController : MonoBehaviour {
-    public float speed = 0;
-  
-    private Rigidbody rb;
-    private float movementX;
-    private float movementY;
-    private ScoreState score;
+    private PlayerModel model;
 
     [Inject]
-    public void Initialize(ScoreState scoreState, Rigidbody rb) {
-      score = scoreState;
-      this.rb = rb;
+    public void Initialize(PlayerModel model) {
+      this.model = model;
     }
 
     public void OnMove(InputValue value) {
-      var vec = value.Get<Vector2>();
-      movementX = vec.x;
-      movementY = vec.y;
+      model.HandleInput(value);
     }
 
-    public void FixedUpdate() {
-      var movement = new Vector3(movementX, 0.0f, movementY);
-      rb.AddForce(movement * speed);
-    }
-
-    private void OnTriggerEnter(Collider other) {
-      if (other.gameObject.CompareTag("Pickup")) {
-        other.gameObject.SetActive(false);
-        score.HandlePickup();
-      }
+    private void OnTriggerEnter(Collider collider) {
+      model.HandleCollision(collider);
     }
   }
 }
