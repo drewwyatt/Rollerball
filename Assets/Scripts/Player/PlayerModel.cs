@@ -8,13 +8,16 @@ namespace Player {
     private Rigidbody rb;
     private Vector2 movement;
     private ScoreState score;
+    public readonly Transform transform;
     private float speed = 10;
 
-    public PlayerModel(Rigidbody rb, ScoreState score) {
-      Debug.Log("PLAYER MODEL");
+    public PlayerModel(Rigidbody rb, ScoreState score, Transform transform) {
       this.rb = rb;
       this.score = score;
+      this.transform = transform;
     }
+
+    public Vector3 position { get { return transform.position; } }
 
     public void HandleInput(InputValue value) {
       movement = value.Get<Vector2>();

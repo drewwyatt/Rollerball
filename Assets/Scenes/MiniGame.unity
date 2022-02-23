@@ -138,8 +138,6 @@ GameObject:
   - component: {fileID: 58001190}
   - component: {fileID: 58001195}
   - component: {fileID: 58001196}
-  - component: {fileID: 58001198}
-  - component: {fileID: 58001197}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -281,36 +279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82030757e7f58408dab517f71e2676ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &58001197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 58001189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b08fa56b9a2e400ab832f87719a2e583, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &58001198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 58001189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08eca9f7688a0a24685b89133b020c8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scriptableObjectInstallers: []
-  _monoInstallers:
-  - {fileID: 58001197}
-  _installerPrefabs: []
-  _autoRun: 1
-  _kernel: {fileID: 0}
 --- !u!1 &58935401
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,7 +952,6 @@ GameObject:
   - component: {fileID: 607151857}
   - component: {fileID: 607151856}
   - component: {fileID: 607151855}
-  - component: {fileID: 607151858}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1057,19 +1024,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
---- !u!114 &607151858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 607151854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4c93a0af5d1b4484b4a3b9a27445f13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 58001189}
 --- !u!1001 &679099549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2145,6 +2099,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5089269635c4fbaa263c98a3cf3ddd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 607151854}
+  player: {fileID: 58001189}
 --- !u!1001 &2068646289
 PrefabInstance:
   m_ObjectHideFlags: 0
